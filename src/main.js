@@ -1,16 +1,9 @@
 // Create variables targetting the relevant DOM elements here 👇
 var randomCover = document.querySelector('.cover-image')
-var randomCoverSource = covers[getRandomIndex(covers)]
-randomCover.src = randomCoverSource
-
 var randomTitle = document.querySelector('.cover-title')
-var randomTitleSource = titles[getRandomIndex(titles)]
-randomTitle.innerText = randomTitleSource
-
 var randomDescriptor1 = document.querySelector(".tagline-1")
 var randomDescriptor2 = document.querySelector(".tagline-2")
-randomDescriptor1.innerText = descriptors[getRandomIndex(descriptors)]
-randomDescriptor2.innerText = descriptors[getRandomIndex(descriptors)]
+
 
 // We've provided a few variables below
 var savedCovers = [
@@ -25,3 +18,12 @@ var currentCover;
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
+
+function randomize() {
+  randomCover.src = covers[getRandomIndex(covers)]
+  randomTitle.innerText = titles[getRandomIndex(titles)]
+  randomDescriptor1.innerText = descriptors[getRandomIndex(descriptors)]
+  randomDescriptor2.innerText = descriptors[getRandomIndex(descriptors)]
+}
+
+randomize()
