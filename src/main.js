@@ -5,6 +5,7 @@ var randomDescriptor1 = document.querySelector(".tagline-1")
 var randomDescriptor2 = document.querySelector(".tagline-2")
 var displayedCover = document.querySelector('.random-cover-button')
 
+var currentCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)])
 
 // We've provided a few variables below
 var savedCovers = [
