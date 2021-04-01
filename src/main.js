@@ -19,6 +19,7 @@ var savedCovers = [
 
 // Add your event listeners here 👇
 displayedCover.addEventListener('click', randomize)
+newCoverButton.addEventListener('click', makeNewCover)
 
 
 // Create your event handlers and other functions here 👇
