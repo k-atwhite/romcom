@@ -7,6 +7,10 @@ var randomTitle = document.querySelector('.cover-title')
 var randomTitleSource = titles[getRandomIndex(titles)]
 randomTitle.innerText = randomTitleSource
 
+var randomDescriptor1 = document.querySelector(".tagline-1")
+var randomDescriptor2 = document.querySelector(".tagline-2")
+randomDescriptor1.innerText = descriptors[getRandomIndex(descriptors)]
+randomDescriptor2.innerText = descriptors[getRandomIndex(descriptors)]
 
 // We've provided a few variables below
 var savedCovers = [
@@ -18,9 +22,6 @@ var currentCover;
 
 
 // Create your event handlers and other functions here 👇
-
-
-// We've provided one function to get you started
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
