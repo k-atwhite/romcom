@@ -12,7 +12,6 @@ var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
 
-console.log(currentCover)
 
 // Add your event listeners here 👇
 displayedCover.addEventListener('click', randomize)
@@ -23,10 +22,10 @@ function getRandomIndex(array) {
 }
 
 function randomize() {
-  randomCover.src = currentCover.cover
-  randomTitle.innerText = currentCover.title
-  randomDescriptor1.innerText = currentCover.tagline1
-  randomDescriptor2.innerText = currentCover.tagline2
+  randomCover.src = covers[getRandomIndex(covers)]
+  randomTitle.innerText = titles[getRandomIndex(titles)]
+  randomDescriptor1.innerText = descriptors[getRandomIndex(descriptors)]
+  randomDescriptor2.innerText = descriptors[getRandomIndex(descriptors)]
 }
 
 randomize()
