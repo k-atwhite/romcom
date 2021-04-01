@@ -3,9 +3,8 @@ var randomCover = document.querySelector('.cover-image')
 var randomTitle = document.querySelector('.cover-title')
 var randomDescriptor1 = document.querySelector(".tagline-1")
 var randomDescriptor2 = document.querySelector(".tagline-2")
-// create variable that is associated with random cover button class
 var displayedCover = document.querySelector('.random-cover-button')
-displayedCover.addEventListener('click', randomize)
+
 
 // We've provided a few variables below
 var savedCovers = [
@@ -14,7 +13,7 @@ var savedCovers = [
 
 
 // Add your event listeners here 👇
-
+displayedCover.addEventListener('click', randomize)
 
 // Create your event handlers and other functions here 👇
 function getRandomIndex(array) {
