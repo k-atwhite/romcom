@@ -30,6 +30,7 @@ newCoverButton.addEventListener('click', function() {
 savedButton.addEventListener('click', function() {
   switchView(homeView, savedCoversView, randomCoverButton, saveNewButton, homeButton)
 })
+homeButton.addEventListener('click', viewHome)
 
 
 
@@ -54,3 +55,10 @@ function switchView(hiddenPage, visiblePage, hiddenButton1, hiddenButton2, visib
   visibleButton.classList.toggle('hidden')
 }
 switchView()
+
+function viewHome() {
+  homeView.classList.toggle('hidden')
+  homeButton.classList.toggle('hidden')
+  randomCoverButton.classList.toggle('hidden')
+  saveNewButton.classList.toggle('hidden')
+}
