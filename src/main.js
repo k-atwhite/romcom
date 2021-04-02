@@ -21,6 +21,8 @@ var savedCovers = [
 // Add your event listeners here 👇
 displayedCover.addEventListener('click', randomize)
 newCoverButton.addEventListener('click', function() {
+  switchView(homeView, formView)
+})
 
 
 
@@ -36,3 +38,9 @@ function randomize() {
   randomDescriptor2.innerText = descriptors[getRandomIndex(descriptors)]
 }
 randomize()
+
+function switchView(hiddenPage, visiblePage)  {
+  visiblePage.classList.toggle('hidden')
+  hiddenPage.classList.toggle('hidden')
+}
+switchView()
