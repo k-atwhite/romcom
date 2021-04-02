@@ -22,7 +22,7 @@ var savedCovers = [
 // Add your event listeners here 👇
 randomCoverButton.addEventListener('click', randomize)
 newCoverButton.addEventListener('click', function() {
-  switchView(homeView, formView)
+  switchView(homeView, formView, randomCoverButton, saveNewButton, homeButton)
 })
 
 
@@ -40,8 +40,11 @@ function randomize() {
 }
 randomize()
 
-function switchView(hiddenPage, visiblePage)  {
+function switchView(hiddenPage, visiblePage, hiddenButton1, hiddenButton2, visibleButton)  {
   visiblePage.classList.toggle('hidden')
   hiddenPage.classList.toggle('hidden')
+  hiddenButton1.classList.toggle('hidden')
+  hiddenButton2.classList.toggle('hidden')
+  visibleButton.classList.toggle('hidden')
 }
 switchView()
