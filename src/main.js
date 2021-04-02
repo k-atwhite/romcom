@@ -1,15 +1,16 @@
 // Create variables targetting the relevant DOM elements here 👇
 var randomCover = document.querySelector('.cover-image')
 var randomTitle = document.querySelector('.cover-title')
-var randomDescriptor1 = document.querySelector(".tagline-1")
-var randomDescriptor2 = document.querySelector(".tagline-2")
-var displayedCover = document.querySelector('.random-cover-button')
+var randomDescriptor1 = document.querySelector('.tagline-1')
+var randomDescriptor2 = document.querySelector('.tagline-2')
+var randomCoverButton = document.querySelector('.random-cover-button')
 var currentCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)])
 
 var newCoverButton = document.querySelector('.make-new-button')
 var formView = document.querySelector('.view.form-view')
 var homeView = document.querySelector('.view.home-view')
-
+var saveNewButton = document.querySelector('.save-cover-button')
+var homeButton =document.querySelector('.home-button')
 
 
 // We've provided a few variables below
@@ -19,7 +20,7 @@ var savedCovers = [
 
 
 // Add your event listeners here 👇
-displayedCover.addEventListener('click', randomize)
+randomCoverButton.addEventListener('click', randomize)
 newCoverButton.addEventListener('click', function() {
   switchView(homeView, formView)
 })
