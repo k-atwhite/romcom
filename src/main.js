@@ -15,6 +15,11 @@ var homeButton =document.querySelector('.home-button')
 var savedButton = document.querySelector('.view-saved-button')
 var savedCoversView = document.querySelector('.view.saved-view')
 
+var formCover = document.querySelector('#cover')
+var formTitle = document.querySelector('#title')
+var formdescriptor1 = document.querySelector('#descriptor1')
+var formdescriptor2 = document.querySelector('#descriptor2')
+var myBookButton = document.querySelector('.create-new-book-button')
 
 // We've provided a few variables below
 var savedCovers = [
