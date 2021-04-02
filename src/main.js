@@ -30,6 +30,7 @@ newCoverButton.addEventListener('click', function() {
 savedButton.addEventListener('click', function() {
   switchView(homeView, savedCoversView, randomCoverButton, saveNewButton, homeButton)
 })
+homeButton.addEventListener('click', viewHome)
 
 
 
