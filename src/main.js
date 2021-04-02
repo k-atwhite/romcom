@@ -12,6 +12,9 @@ var homeView = document.querySelector('.view.home-view')
 var saveNewButton = document.querySelector('.save-cover-button')
 var homeButton =document.querySelector('.home-button')
 
+var savedButton = document.querySelector('.view-saved-button')
+var savedCoversView = document.querySelector('.view.saved-view')
+
 
 // We've provided a few variables below
 var savedCovers = [
