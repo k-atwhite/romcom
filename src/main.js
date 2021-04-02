@@ -27,6 +27,9 @@ randomCoverButton.addEventListener('click', randomize)
 newCoverButton.addEventListener('click', function() {
   switchView(homeView, formView, randomCoverButton, saveNewButton, homeButton)
 })
+savedButton.addEventListener('click', function() {
+  switchView(homeView, savedCoversView, randomCoverButton, saveNewButton, homeButton)
+})
 
 
 
