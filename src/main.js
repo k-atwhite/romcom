@@ -17,8 +17,8 @@ var savedCoversView = document.querySelector('.view.saved-view')
 
 var formCover = document.querySelector('#cover')
 var formTitle = document.querySelector('#title')
-var formdescriptor1 = document.querySelector('#descriptor1')
-var formdescriptor2 = document.querySelector('#descriptor2')
+var formDescriptor1 = document.querySelector('#descriptor1')
+var formDescriptor2 = document.querySelector('#descriptor2')
 var myBookButton = document.querySelector('.create-new-book-button')
 
 // We've provided a few variables below
@@ -29,15 +29,18 @@ var savedCovers = [
 
 // Add your event listeners here 👇
 randomCoverButton.addEventListener('click', randomize)
+
 newCoverButton.addEventListener('click', function() {
   switchView(homeView, formView, randomCoverButton, saveNewButton, homeButton)
 })
+
 savedButton.addEventListener('click', function() {
   switchView(homeView, savedCoversView, randomCoverButton, saveNewButton, homeButton)
 })
+
 homeButton.addEventListener('click', viewHome)
 
-
+myBookButton.addEventListener('click', saveMyBook)
 
 // Create your event handlers and other functions here 👇
 function getRandomIndex(array) {
@@ -49,6 +52,7 @@ function randomize() {
   randomTitle.innerText = titles[getRandomIndex(titles)]
   randomDescriptor1.innerText = descriptors[getRandomIndex(descriptors)]
   randomDescriptor2.innerText = descriptors[getRandomIndex(descriptors)]
+  currentCover = new Cover(randomCover.src, randomTitle.innerText, randomDescriptor1.innerText, randomDescriptor2.innerText)
 }
 randomize()
 
@@ -59,11 +63,27 @@ function switchView(hiddenPage, visiblePage, hiddenButton1, hiddenButton2, visib
   hiddenButton2.classList.toggle('hidden')
   visibleButton.classList.toggle('hidden')
 }
-switchView()
+// switchView()
 
 function viewHome() {
   homeView.classList.toggle('hidden')
   homeButton.classList.toggle('hidden')
   randomCoverButton.classList.toggle('hidden')
   saveNewButton.classList.toggle('hidden')
+}
+
+function saveMyBook(event) {
+  event.preventDefault();
+  //we need to refactor the name of randomTitle, etc
+  randomCover.src = formCover.value
+  randomTitle.innerText = formTitle.value
+  randomDescriptor1.innerText = formDescriptor1.value
+  randomDescriptor2.innerText = formDescriptor2.value
+  covers.push(formCover.value)
+  titles.push(formTitle.value)
+  descriptors.push(formDescriptor1.value, formDescriptor2.value)
+
+  //randomCover.setAttribute("src", coverValue);
+  currentCover = new Cover (formCover.value, formTitle.value, formDescriptor1.value, formDescriptor2.value);
+  viewHome()
 }
