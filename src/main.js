@@ -7,7 +7,8 @@ var displayedCover = document.querySelector('.random-cover-button')
 var currentCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)])
 
 var newCoverButton = document.querySelector('.make-new-button')
-var newCoverForm = document.getElementsByClass('view form-view hidden')
+var formView = document.querySelector('.view.form-view')
+var homeView = document.querySelector('.view.home-view')
 
 
 
@@ -19,7 +20,8 @@ var savedCovers = [
 
 // Add your event listeners here 👇
 displayedCover.addEventListener('click', randomize)
-newCoverButton.addEventListener('click', makeNewCover)
+newCoverButton.addEventListener('click', function() {
+
 
 
 // Create your event handlers and other functions here 👇
