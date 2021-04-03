@@ -38,6 +38,8 @@ homeButton.addEventListener('click', viewHome)
 
 myBookButton.addEventListener('click', saveMyBook)
 
+saveNewButton.addEventListener('click', saveCover)
+
 
 // Create your event handlers and other functions here 👇
 function getRandomIndex(array) {
