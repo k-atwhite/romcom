@@ -14,6 +14,7 @@ var homeButton =document.querySelector('.home-button')
 
 var savedButton = document.querySelector('.view-saved-button')
 var savedCoversView = document.querySelector('.view.saved-view')
+var savedCoversSection = document.querySelector('.saved-covers-section')
 
 var formCover = document.querySelector('#cover')
 var formTitle = document.querySelector('#title')
@@ -26,17 +27,19 @@ var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
 
-
 // Add your event listeners here 👇
 randomCoverButton.addEventListener('click', randomize)
 
 newCoverButton.addEventListener('click', viewForm)
 
-savedButton.addEventListener('click', viewSavedCovers)
+savedButton.addEventListener('click', viewSavedCovers, displaySavedCovers)
 
 homeButton.addEventListener('click', viewHome)
 
 myBookButton.addEventListener('click', saveMyBook)
+
+saveNewButton.addEventListener('click', saveCover)
+
 
 // Create your event handlers and other functions here 👇
 function getRandomIndex(array) {
@@ -51,7 +54,6 @@ function randomize() {
   currentCover = new Cover(cover.src, title.innerText, descriptor1.innerText, descriptor2.innerText)
 }
 randomize()
-
 
 function viewForm() {
   homeView.classList.add('hidden')
@@ -70,6 +72,8 @@ function viewSavedCovers() {
   randomCoverButton.classList.add('hidden')
   saveNewButton.classList.add('hidden')
 }
+
+
 
 // switchView()
 
@@ -95,4 +99,18 @@ function saveMyBook(event) {
   //randomCover.setAttribute("src", coverValue);
   currentCover = new Cover (formCover.value, formTitle.value, formDescriptor1.value, formDescriptor2.value);
   viewHome()
+}
+
+function saveCover(){
+  if (savedCovers.includes(currentCover) === false) {
+    savedCovers.push(currentCover)
+    savedCoversSection.innerHTML += `
+      <section class="mini-cover">
+        <img class="cover-image" src="${currentCover.cover}">
+        <h2 class="cover-title">${currentCover.title}</h2>
+        <h3 class="tagline">A tale of <span class="tagline-1">${currentCover.tagline1}</span> and <span class="tagline-2">${currentCover.tagline2}</span></h3>
+        <img class="price-tag" src="./assets/price.png">
+        <img class="overlay" src="./assets/overlay.png">
+      </section>`
+  }
 }
