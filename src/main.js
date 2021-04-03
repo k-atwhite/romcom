@@ -1,8 +1,8 @@
 // Create variables targetting the relevant DOM elements here 👇
-var randomCover = document.querySelector('.cover-image')
-var randomTitle = document.querySelector('.cover-title')
-var randomDescriptor1 = document.querySelector('.tagline-1')
-var randomDescriptor2 = document.querySelector('.tagline-2')
+var cover = document.querySelector('.cover-image')
+var title = document.querySelector('.cover-title')
+var descriptor1 = document.querySelector('.tagline-1')
+var descriptor2 = document.querySelector('.tagline-2')
 var randomCoverButton = document.querySelector('.random-cover-button')
 var currentCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)])
 
@@ -44,11 +44,11 @@ function getRandomIndex(array) {
 }
 
 function randomize() {
-  randomCover.src = covers[getRandomIndex(covers)]
-  randomTitle.innerText = titles[getRandomIndex(titles)]
-  randomDescriptor1.innerText = descriptors[getRandomIndex(descriptors)]
-  randomDescriptor2.innerText = descriptors[getRandomIndex(descriptors)]
-  currentCover = new Cover(randomCover.src, randomTitle.innerText, randomDescriptor1.innerText, randomDescriptor2.innerText)
+  cover.src = covers[getRandomIndex(covers)]
+  title.innerText = titles[getRandomIndex(titles)]
+  descriptor1.innerText = descriptors[getRandomIndex(descriptors)]
+  descriptor2.innerText = descriptors[getRandomIndex(descriptors)]
+  currentCover = new Cover(cover.src, title.innerText, descriptor1.innerText, descriptor2.innerText)
 }
 randomize()
 
@@ -84,11 +84,10 @@ function viewHome() {
 
 function saveMyBook(event) {
   event.preventDefault();
-  //we need to refactor the name of randomTitle, etc
-  randomCover.src = formCover.value
-  randomTitle.innerText = formTitle.value
-  randomDescriptor1.innerText = formDescriptor1.value
-  randomDescriptor2.innerText = formDescriptor2.value
+  cover.src = formCover.value
+  title.innerText = formTitle.value
+  descriptor1.innerText = formDescriptor1.value
+  descriptor2.innerText = formDescriptor2.value
   covers.push(formCover.value)
   titles.push(formTitle.value)
   descriptors.push(formDescriptor1.value, formDescriptor2.value)
