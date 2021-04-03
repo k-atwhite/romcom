@@ -30,13 +30,9 @@ var savedCovers = [
 // Add your event listeners here 👇
 randomCoverButton.addEventListener('click', randomize)
 
-newCoverButton.addEventListener('click', function() {
-  switchView(homeView, formView, randomCoverButton, saveNewButton, homeButton)
-})
+newCoverButton.addEventListener('click', viewForm)
 
-savedButton.addEventListener('click', function() {
-  switchView(homeView, savedCoversView, randomCoverButton, saveNewButton, homeButton)
-})
+savedButton.addEventListener('click', viewSavedCovers)
 
 homeButton.addEventListener('click', viewHome)
 
@@ -56,20 +52,34 @@ function randomize() {
 }
 randomize()
 
-function switchView(hiddenPage, visiblePage, hiddenButton1, hiddenButton2, visibleButton)  {
-  visiblePage.classList.toggle('hidden')
-  hiddenPage.classList.toggle('hidden')
-  hiddenButton1.classList.toggle('hidden')
-  hiddenButton2.classList.toggle('hidden')
-  visibleButton.classList.toggle('hidden')
+
+function viewForm() {
+  homeView.classList.add('hidden')
+  formView.classList.remove('hidden')
+  savedCoversView.classList.add('hidden')
+  homeButton.classList.remove('hidden')
+  randomCoverButton.classList.add('hidden')
+  saveNewButton.classList.add('hidden')
 }
+
+function viewSavedCovers() {
+  homeView.classList.add('hidden')
+  formView.classList.add('hidden')
+  savedCoversView.classList.remove('hidden')
+  homeButton.classList.remove('hidden')
+  randomCoverButton.classList.add('hidden')
+  saveNewButton.classList.add('hidden')
+}
+
 // switchView()
 
 function viewHome() {
-  homeView.classList.toggle('hidden')
-  homeButton.classList.toggle('hidden')
-  randomCoverButton.classList.toggle('hidden')
-  saveNewButton.classList.toggle('hidden')
+  homeView.classList.remove('hidden')
+  formView.classList.add('hidden')
+  savedCoversView.classList.add('hidden')
+  homeButton.classList.add('hidden')
+  randomCoverButton.classList.remove('hidden')
+  saveNewButton.classList.remove('hidden')
 }
 
 function saveMyBook(event) {
