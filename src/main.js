@@ -32,7 +32,7 @@ randomCoverButton.addEventListener('click', randomize)
 
 newCoverButton.addEventListener('click', viewForm)
 
-savedButton.addEventListener('click', viewSavedCovers, displaySavedCovers)
+savedButton.addEventListener('click', viewSavedCovers)
 
 homeButton.addEventListener('click', viewHome)
 
@@ -40,10 +40,12 @@ myBookButton.addEventListener('click', saveMyBook)
 
 saveNewButton.addEventListener('click', saveCover)
 
+savedCoversSection.addEventListener('dblclick', deleteSavedCover)
+
 
 // Create your event handlers and other functions here 👇
 function getRandomIndex(array) {
-  return Math.floor(Math.random() * array.length);
+  return Math.floor(Math.random() * array.length);f
 }
 
 function randomize() {
@@ -73,10 +75,6 @@ function viewSavedCovers() {
   saveNewButton.classList.add('hidden')
 }
 
-
-
-// switchView()
-
 function viewHome() {
   homeView.classList.remove('hidden')
   formView.classList.add('hidden')
@@ -95,8 +93,6 @@ function saveMyBook(event) {
   covers.push(formCover.value)
   titles.push(formTitle.value)
   descriptors.push(formDescriptor1.value, formDescriptor2.value)
-
-  //randomCover.setAttribute("src", coverValue);
   currentCover = new Cover (formCover.value, formTitle.value, formDescriptor1.value, formDescriptor2.value);
   viewHome()
 }
@@ -104,13 +100,27 @@ function saveMyBook(event) {
 function saveCover(){
   if (savedCovers.includes(currentCover) === false) {
     savedCovers.push(currentCover)
-    savedCoversSection.innerHTML += `
-      <section class="mini-cover">
-        <img class="cover-image" src="${currentCover.cover}">
-        <h2 class="cover-title">${currentCover.title}</h2>
-        <h3 class="tagline">A tale of <span class="tagline-1">${currentCover.tagline1}</span> and <span class="tagline-2">${currentCover.tagline2}</span></h3>
-        <img class="price-tag" src="./assets/price.png">
-        <img class="overlay" src="./assets/overlay.png">
-      </section>`
   }
+  displayMiniCovers()
+}
+
+function displayMiniCovers() {
+  savedCoversSection.innerHTML += `
+    <section class="mini-cover" id="${currentCover.id}">
+      <img class="cover-image" src="${currentCover.cover}">
+      <h2 class="cover-title">${currentCover.title}</h2>
+      <h3 class="tagline">A tale of <span class="tagline-1">${currentCover.tagline1}</span> and <span class="tagline-2">${currentCover.tagline2}</span></h3>
+      <img class="price-tag" src="./assets/price.png">
+      <img class="overlay" src="./assets/overlay.png">
+    </section>`
+}
+
+function deleteSavedCover() {
+  var clickedCover = event.target.closest(".mini-cover")
+  for (var i = 0; i < savedCovers.length; i++) {
+    if(savedCovers[i].id === Number(clickedCover.id)) {
+      savedCovers.splice(i, 1)
+    }
+  }
+  displayMiniCovers()
 }
