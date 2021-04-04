@@ -101,7 +101,7 @@ function saveCover(){
   if (savedCovers.includes(currentCover) === false) {
     savedCovers.push(currentCover)
     savedCoversSection.innerHTML += `
-      <section class="mini-cover">
+      <section class="mini-cover" id="${currentCover.id}">
         <img class="cover-image" src="${currentCover.cover}">
         <h2 class="cover-title">${currentCover.title}</h2>
         <h3 class="tagline">A tale of <span class="tagline-1">${currentCover.tagline1}</span> and <span class="tagline-2">${currentCover.tagline2}</span></h3>
@@ -114,14 +114,16 @@ function saveCover(){
 function deleteSavedCover() {
   var clickedCover = event.target.closest(".mini-cover")
     console.log("fara is cute")
+    console.log(savedCovers)
+    console.log(clickedCover.id);
   for (var i = 0; i < savedCovers.length; i++) {
+    console.log("Evan is cute")
     if(savedCovers[i].id === Number(clickedCover.id)) {
       console.log("ashton is cute")
       savedCovers.splice(i, 1)
       console.log("kat is cute")
     }
   }
-  saveCover()
 }
 
 
