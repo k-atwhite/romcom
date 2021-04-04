@@ -32,7 +32,7 @@ randomCoverButton.addEventListener('click', randomize)
 
 newCoverButton.addEventListener('click', viewForm)
 
-savedButton.addEventListener('click', viewSavedCovers, displaySavedCovers)
+savedButton.addEventListener('click', viewSavedCovers)
 
 homeButton.addEventListener('click', viewHome)
 
@@ -40,10 +40,12 @@ myBookButton.addEventListener('click', saveMyBook)
 
 saveNewButton.addEventListener('click', saveCover)
 
+savedCoversSection.addEventListener('dblclick', deleteSavedCover)
+
 
 // Create your event handlers and other functions here 👇
 function getRandomIndex(array) {
-  return Math.floor(Math.random() * array.length);
+  return Math.floor(Math.random() * array.length);f
 }
 
 function randomize() {
@@ -73,10 +75,6 @@ function viewSavedCovers() {
   saveNewButton.classList.add('hidden')
 }
 
-
-
-// switchView()
-
 function viewHome() {
   homeView.classList.remove('hidden')
   formView.classList.add('hidden')
@@ -95,8 +93,6 @@ function saveMyBook(event) {
   covers.push(formCover.value)
   titles.push(formTitle.value)
   descriptors.push(formDescriptor1.value, formDescriptor2.value)
-
-  //randomCover.setAttribute("src", coverValue);
   currentCover = new Cover (formCover.value, formTitle.value, formDescriptor1.value, formDescriptor2.value);
   viewHome()
 }
@@ -114,3 +110,27 @@ function saveCover(){
       </section>`
   }
 }
+
+function deleteSavedCover() {
+  var clickedCover = event.target.closest(".mini-cover")
+    console.log("fara is cute")
+  for (var i = 0; i < savedCovers.length; i++) {
+    if(savedCovers[i].id === Number(clickedCover.id)) {
+      console.log("ashton is cute")
+      savedCovers.splice(i, 1)
+      console.log("kat is cute")
+    }
+  }
+  saveCover()
+}
+
+
+// function deletor() {
+//     var clickedMiniCover = event.target.closest(".mini-cover");
+//     for (var i = 0; i < savedCovers.length; i++) {
+//       if(savedCovers[i].id === Number(clickedMiniCover.id)){
+//         savedCovers.splice(i, 1);
+//       };
+//     };
+//   displaySavedCovers();
+// };
