@@ -8,7 +8,7 @@ var currentCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomInd
 var randomCoverButton = document.querySelector('.random-cover-button')
 var newCoverButton = document.querySelector('.make-new-button')
 var saveNewButton = document.querySelector('.save-cover-button')
-var homeButton =document.querySelector('.home-button')
+var homeButton = document.querySelector('.home-button')
 var savedButton = document.querySelector('.view-saved-button')
 
 var formView = document.querySelector('.view.form-view')
@@ -112,10 +112,8 @@ function saveCover(){
   }
 }
 
-
-
 function deleteSavedCover() {
-  var clickedCover = event.target.closest(".mini-cover")
+  var clickedCover = event.target.closest('.mini-cover')
   for (var i = 0; i < savedCovers.length; i++) {
     if(savedCovers[i].id === Number(clickedCover.id)) {
       savedCovers.splice(i, 1)
