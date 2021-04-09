@@ -5,11 +5,11 @@
 For our first paird project in the Mod 1 Front End program, we were tasked with building the Javascript component of a website that already had implemented HTML and CSS. The goal was to understand the intersectionality of HTML, CSS, and JavaScript through the DOM. We created functionality on the webpage by using our knowledge querying in JavaScript, creating event listeners, and event handlers. Our goals were to write clean, DRY JavaScript to store our data, use a provided class by creating object instances using the new keyword, and manipulate the page after it has loaded adding, removing, and updating elements on the DOM.
 
 # Table of Contents
-1. [Contributors](Contributors)
-2. [Our Project](Check-out-our-project-below)
-3. [Technologies Used](Technologies-Used)
-4. [How To](How-To)
-5. [Future Additions](Future-Additions)
+1. [Contributors](https://github.com/k-atwhite/romcom/blob/main/README.md#contributors)
+2. [Our Project](https://github.com/k-atwhite/romcom/blob/main/README.md#check-out-our-project-below)
+3. [Technologies Used](https://github.com/k-atwhite/romcom/blob/main/README.md#technologies-usedd)
+4. [How To](https://github.com/k-atwhite/romcom/blob/main/README.md#how-to)
+5. [Future Additions](https://github.com/k-atwhite/romcom/blob/main/README.md#future-additions)
 
 # Contributors
 * [Ashton Huxtable](https://github.com/ahuxtable1327)
